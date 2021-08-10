@@ -4,7 +4,7 @@
   "description": "data structures and algo practice repo",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -16,8 +16,7 @@
     "url": "https://github.com/wdmcculloch/code-wars-practice/issues"
   },
   "homepage": "https://github.com/wdmcculloch/code-wars-practice#readme",
-  "dependencies": {},
-  "devDependencies": {
+  "dependencies": {
     "jest": "^27.0.6"
   }
 }
