@@ -1,0 +1,23 @@
+{
+  "name": "code-wars-practice",
+  "version": "1.0.0",
+  "description": "data structures and algo practice repo",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wdmcculloch/code-wars-practice.git"
+  },
+  "author": "Will McCulloch",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wdmcculloch/code-wars-practice/issues"
+  },
+  "homepage": "https://github.com/wdmcculloch/code-wars-practice#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^27.0.6"
+  }
+}
