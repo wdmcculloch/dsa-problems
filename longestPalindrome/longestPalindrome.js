@@ -7,31 +7,31 @@
  * @constraints s consists of only english letters
  */
 var longestPalindrome = function (s) {
-  if (s.length === 1) {
+  if (s.length < 2) {
     return s;
   }
-  let longestPalindrome = "";
+  let longest = [0, 0];
   for (let i = 0; i < s.length; i++) {
-    for (let j = 0; j < s.length; j++) {
-      let current = s.slice(i, j + 1);
-      if (isPalindrome(current) && current.length > longestPalindrome.length) {
-        longestPalindrome = current;
-      }
+    let odd = checkPalindrome(s, i);
+    let even = checkPalindrome(s, i, i + 1);
+    let check = odd[1] - odd[0] > even[1] - even[0] ? odd : even;
+    longest = check[1] - check[0] > longest[1] - longest[0] ? check : longest;
+  }
+  return s.slice(longest[0], longest[1] + 1);
+};
+
+var checkPalindrome = (s, indexLeft, indexRight) => {
+  let left = indexLeft;
+  let right = indexRight === undefined ? indexLeft : indexRight;
+
+  while (left >= 0 && right < s.length) {
+    if (s[left] !== s[right]) {
+      break;
     }
+    left--;
+    right++;
   }
-  return longestPalindrome;
-};
-
-var reverseString = (s) => {
-  let newStr = "";
-  for (let i = s.length - 1; i >= 0; i--) {
-    newStr += s[i];
-  }
-  return newStr;
-};
-
-var isPalindrome = (s) => {
-  return s === reverseString(s);
+  return [left + 1, right - 1];
 };
 
 module.exports = longestPalindrome;
